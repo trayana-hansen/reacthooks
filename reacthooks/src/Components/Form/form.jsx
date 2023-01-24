@@ -8,11 +8,21 @@ const Form = () => {
       phoneNumber: "...",
       email: "...",
       comments: "...",
+      emailContact: false,
+      phoneContact: false,
     }
   );
   const registerInput = (e) => {
     setFormElm((prevState) => {
       return { ...prevState, [e.target.name]: e.target.value };
+    });
+  };
+  const registerContact = (e) => {
+    setFormElm((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.checked,
+      };
     });
   };
 
@@ -58,9 +68,17 @@ const Form = () => {
           ></textarea>
         </div>
         <div>
-          <input type="checkbox" name="contact" />{" "}
+          <input
+            type="checkbox"
+            name="emailContact"
+            onClick={registerContact}
+          />{" "}
           <label htmlFor="">Vil gerne kontaktes med email</label> <br />
-          <input type="checkbox" name="contact" />{" "}
+          <input
+            type="checkbox"
+            name="phoneContact"
+            onClick={registerContact}
+          />{" "}
           <label htmlFor="">Vil gerne kontaktes med telefon</label>
         </div>
         <div>
@@ -75,6 +93,8 @@ const Form = () => {
           <li>Telefon nummer: {formElm.phoneNumber}</li>
           <li>Email: {formElm.email}</li>
           <li>Kommentarer: {formElm.comments}</li>
+          <li>Phone contact: {formElm.phoneContact ? "Ja" : "Nej"}</li>
+          <li>Email contact: {formElm.emailContact ? "Ja" : "Nej"} </li>
         </ul>
       </section>
     </div>
