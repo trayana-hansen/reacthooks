@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { GoalList } from "../UseEffectExamples/goalApiCall";
 import Form from "../Form/form";
 import CounterTimeOut from "../CounterTimeOut/counterTimeOut";
+import NotFound from "../../Partials/notfound";
 
 const AppRouter = () => {
   return (

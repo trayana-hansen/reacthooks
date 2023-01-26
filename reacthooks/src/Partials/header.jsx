@@ -1,8 +1,12 @@
-import { NavLink } from "react-router-dom";
-
 import Nav from "./nav";
+
 const Header = () => {
-  return ;
+  return (
+    <header>
+      <h1>My React page</h1>
+      <Nav />
+    </header>
+  );
 };
 
 export default Header;
